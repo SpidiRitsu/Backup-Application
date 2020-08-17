@@ -1,0 +1,20 @@
+{
+  "entrypoint": "index.html",
+  "shell": "index.html",
+  "fragments": [
+      "elements/backups-grid.js",
+      "elements/databases-grid.js",
+      "elements/scp-grid.js",
+      "elements/sidebar.js",
+      "elements/users-grid.js"
+  ],
+  "sources": [
+      "elements/*.js",
+      "favicon.png",
+      "package.json"
+  ],
+  "builds": [{ 
+      "name": "default",
+      "bundle": true
+  }]
+}

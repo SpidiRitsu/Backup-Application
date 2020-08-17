@@ -1,0 +1,11 @@
+{
+  "name": "Backup Application - tests",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.0",
+    "puppeteer": "^3.0.0"
+  }
+}

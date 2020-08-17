@@ -1,0 +1,9 @@
+gevent
+flask
+flask-httpauth
+flask-sqlalchemy
+mysqlclient
+flask-marshmallow
+flask-cors
+marshmallow-sqlalchemy
+yagmail

@@ -1,0 +1,20 @@
+version: '3'
+
+services: 
+  backup-backend:
+    container_name: backup-backend
+    build: 
+      context: ./backend/
+    environment:
+      - API_URL=${API_URL}
+      - PORT=${PORT}
+      - SLACK_WEBHOOK=${SLACK_WEBHOOK}
+      - SLACK_CHANNEL=${SLACK_CHANNEL}
+      - SENDER_EMAIL=${SENDER_EMAIL}
+      - SENDER_PASSWORD=${SENDER_PASSWORD}
+      - RECEIVER_EMAIL=${RECEIVER_EMAIL}
+    ports:
+      - "5000:5000"
+    restart: on-failure
+    volumes:
+      - ./backend:/app

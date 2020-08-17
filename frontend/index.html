@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <title>Backup App</title>
+    <base href="/">
+    <script>
+            window.config = {
+               api_key: "{{ api_key }}",
+               api_url: "{{ api_url }}"
+            }
+        </script>
+    <script src="./node_modules/@vaadin/router/dist/vaadin-router.umd.js"></script>
+    <script type="module" src="node_modules/@vaadin/vaadin-lumo-styles/all-imports.js"></script>
+    <script type="module" src="elements/backups-grid.js"></script>
+    <script type="module" src="elements/databases-grid.js"></script>
+    <script type="module" src="elements/users-grid.js"></script>
+    <script type="module" src="elements/scp-grid.js"></script>
+
+    <script type="module" src="elements/sidebar.js"></script>
+    <custom-style>
+  <style include="lumo-typography lumo-color">
+  </style>
+</custom-style>
+</head>
+<body>
+    <div id="outlet"></div>
+    <script>
+        const {Router} = window.Vaadin;
+
+        // setup a Router instance
+        const outlet = document.getElementById('outlet');
+        const router = new Router(outlet);   
+        router.setRoutes([
+        {
+            path: '/',
+            component: 'sidebar-layout',
+            children: [
+                {path: '/', component: 'backups-grid'},
+                {path: '/databases', component: 'databases-grid'},
+                {path: '/users', component: 'users-grid'},
+                {path: '/scp', component: 'scp-grid'}
+            ]
+        }
+    ]); 
+    </script>
+</body>
+</html>
